@@ -39,7 +39,6 @@ io.on("connection", (socket) => {
     socket.to(data.roomID).emit("refresh_event");
   });
   socket.on("user_deleted_event", (data) => {
-    console.log(data);
     socket.to(data.roomID).emit("event_was_deleted", data);
   });
 });
