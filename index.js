@@ -15,7 +15,6 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: "*",
-    methods: ["GET", "POST"],
   },
 });
 
@@ -43,8 +42,8 @@ io.on("connection", (socket) => {
   });
 });
 //* socket
-
+let port = process.env.PORT || 3200;
 //! liseners
-server.listen(3200, () => {
-  console.log("socker RUN: 3200");
+server.listen(port, () => {
+  console.log(`socker RUN: ${port}`);
 });
